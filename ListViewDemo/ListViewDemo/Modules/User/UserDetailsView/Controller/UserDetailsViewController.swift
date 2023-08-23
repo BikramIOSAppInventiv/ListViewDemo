@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UserDetailsViewController: UIViewController {
     
@@ -20,13 +21,16 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet private weak var countryLabel: UILabel!
     @IBOutlet private weak var postCodeLabel: UILabel!
     
+    //MARK: - Private Properties
+    
+    var objCModel = UserListModel()
+    
     //MARK: - View Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.setIntialUI()
+        self.setIntialUI()
     }
-    
     
 }
 
@@ -35,13 +39,26 @@ class UserDetailsViewController: UIViewController {
 private extension UserDetailsViewController {
     
     func setIntialUI() {
-        self.userEmailLabel.text = "Email: bikramjeet Singh"
-        self.userRegisteredDateLabel.text = "Date Joined: 2 days ago"
-        self.userDateOfBirthLabel.text = "DOB: 21st June 1982"
-        self.cityLabel.text = "city: Salford"
-        self.stateLabel.text = "state: File"
-        self.countryLabel.text = "country United Kingdom"
-        self.postCodeLabel.text = "postcode F14 7LN"
+        DispatchQueue.main.async {
+            self.userProfilePicImageView.sd_setImage(with: URL(string: self.objCModel.largeUserImage), placeholderImage: UIImage(named: "placeholder.png"))
+            self.userEmailLabel.text = self.objCModel.userEmailAddress
+            self.userRegisteredDateLabel.text = self.objCModel.registeredDate
+            self.userDateOfBirthLabel.text = self.objCModel.registeredDate
+            self.cityLabel.text = self.objCModel.userCity
+            self.stateLabel.text = self.objCModel.userState
+            self.countryLabel.text = self.objCModel.userCountry
+//            self.postCodeLabel.text = "\(self.objCModel.userPostcode)"
+        }
+    }
+    
+}
+
+//MARK:- Public Methods
+
+extension UserDetailsViewController {
+    
+    @objc func bindListViewData(model: UserListModel) {
+        objCModel = model
     }
     
 }

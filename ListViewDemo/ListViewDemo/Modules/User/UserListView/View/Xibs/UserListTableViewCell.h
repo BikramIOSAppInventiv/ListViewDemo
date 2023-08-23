@@ -6,6 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserListModel.h"
+#import <SDWebImage/SDWebImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *userEmailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userCountryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userRegisteredDateLabel;
+
+- (void)printName:(UserListModel *)model ;
 
 @end
 
