@@ -9,20 +9,19 @@
 /* Begin PBXBuildFile section */
 		0C39265B2A96580A00FA68FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39265A2A96580A00FA68FB /* AppDelegate.swift */; };
 		0C39265D2A96580A00FA68FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39265C2A96580A00FA68FB /* SceneDelegate.swift */; };
-		0C39265F2A96580A00FA68FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39265E2A96580A00FA68FB /* ViewController.swift */; };
 		0C3926622A96580A00FA68FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3926602A96580A00FA68FB /* Main.storyboard */; };
 		0C3926652A96580A00FA68FB /* ListViewDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926632A96580A00FA68FB /* ListViewDemo.xcdatamodeld */; };
 		0C3926672A96580C00FA68FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C3926662A96580C00FA68FB /* Assets.xcassets */; };
 		0C39266A2A96580C00FA68FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C3926682A96580C00FA68FB /* LaunchScreen.storyboard */; };
 		0C39267F2A965D4100FA68FB /* UserListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C39267D2A965D4100FA68FB /* UserListTableViewCell.m */; };
 		0C3926802A965D4100FA68FB /* UserListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C39267E2A965D4100FA68FB /* UserListTableViewCell.xib */; };
+		0C3926842A96655E00FA68FB /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926832A96655E00FA68FB /* UserListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C3926572A96580A00FA68FB /* ListViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C39265A2A96580A00FA68FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C39265C2A96580A00FA68FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C39265E2A96580A00FA68FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0C3926612A96580A00FA68FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C3926642A96580A00FA68FB /* ListViewDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListViewDemo.xcdatamodel; sourceTree = "<group>"; };
 		0C3926662A96580C00FA68FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,6 +31,8 @@
 		0C39267C2A965D4100FA68FB /* UserListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListTableViewCell.h; sourceTree = "<group>"; };
 		0C39267D2A965D4100FA68FB /* UserListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListTableViewCell.m; sourceTree = "<group>"; };
 		0C39267E2A965D4100FA68FB /* UserListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListTableViewCell.xib; sourceTree = "<group>"; };
+		0C3926822A96655E00FA68FB /* UserListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListViewController.h; sourceTree = "<group>"; };
+		0C3926832A96655E00FA68FB /* UserListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +96,12 @@
 		0C3926732A9658DB00FA68FB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				0C3926742A9658F700FA68FB /* ListView */,
+				0C3926742A9658F700FA68FB /* UserListView */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		0C3926742A9658F700FA68FB /* ListView */ = {
+		0C3926742A9658F700FA68FB /* UserListView */ = {
 			isa = PBXGroup;
 			children = (
 				0C3926782A96591400FA68FB /* View */,
@@ -108,13 +109,14 @@
 				0C3926762A96590700FA68FB /* Model */,
 				0C3926752A9658FF00FA68FB /* Controller */,
 			);
-			path = ListView;
+			path = UserListView;
 			sourceTree = "<group>";
 		};
 		0C3926752A9658FF00FA68FB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0C39265E2A96580A00FA68FB /* ViewController.swift */,
+				0C3926822A96655E00FA68FB /* UserListViewController.h */,
+				0C3926832A96655E00FA68FB /* UserListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -241,7 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C39265F2A96580A00FA68FB /* ViewController.swift in Sources */,
+				0C3926842A96655E00FA68FB /* UserListViewController.m in Sources */,
 				0C3926652A96580A00FA68FB /* ListViewDemo.xcdatamodeld in Sources */,
 				0C39265B2A96580A00FA68FB /* AppDelegate.swift in Sources */,
 				0C39267F2A965D4100FA68FB /* UserListTableViewCell.m in Sources */,
