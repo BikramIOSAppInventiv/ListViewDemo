@@ -9,6 +9,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class UserDetailsViewController;
+
 @interface UserListViewController : UIViewController<UITableViewDataSource,UITableViewDelegate> {
     NSArray *fruits;
 }
