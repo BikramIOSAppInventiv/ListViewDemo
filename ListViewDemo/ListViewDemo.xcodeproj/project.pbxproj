@@ -25,6 +25,7 @@
 		0C3926D12A97358C00FA68FB /* UserDetails+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926CF2A97358C00FA68FB /* UserDetails+CoreDataClass.m */; };
 		0C3926D22A97358C00FA68FB /* UserDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926D02A97358C00FA68FB /* UserDetails+CoreDataProperties.m */; };
 		0C3926DA2A973C7400FA68FB /* NSString+CustomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926D92A973C7400FA68FB /* NSString+CustomExtension.m */; };
+		0C3926E22A9766DF00FA68FB /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926E12A9766DF00FA68FB /* AppConstants.swift */; };
 		141C9F01625106D8DF7AD512 /* Pods_ListViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		0C3926D02A97358C00FA68FB /* UserDetails+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UserDetails+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
 		0C3926D82A973C7400FA68FB /* NSString+CustomExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CustomExtension.h"; sourceTree = "<group>"; };
 		0C3926D92A973C7400FA68FB /* NSString+CustomExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CustomExtension.m"; sourceTree = "<group>"; };
+		0C3926E12A9766DF00FA68FB /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		57FBC85B23625F31F3984119 /* Pods-ListViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF51296456E0E75A859D409 /* Pods-ListViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.release.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				0C39268D2A967E7000FA68FB /* APIManager */,
 				0C39269F2A97089900FA68FB /* CoreDataManager */,
 				0C3926732A9658DB00FA68FB /* Modules */,
+				0C3926E02A9766B300FA68FB /* AppUtilities */,
 				0C39269A2A97049200FA68FB /* Extensions */,
 				0C3926712A96588B00FA68FB /* Support Files */,
 				0C3926662A96580C00FA68FB /* Assets.xcassets */,
@@ -283,8 +286,8 @@
 		0C39269A2A97049200FA68FB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0C3926D42A973B3600FA68FB /* Objective C */,
-				0C3926D32A973B2500FA68FB /* Swift */,
+				0C39269B2A9704B100FA68FB /* UI */,
+				0C39269C2A9704BD00FA68FB /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -315,20 +318,12 @@
 			path = CoreDataManager;
 			sourceTree = "<group>";
 		};
-		0C3926D32A973B2500FA68FB /* Swift */ = {
+		0C3926E02A9766B300FA68FB /* AppUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				0C39269B2A9704B100FA68FB /* UI */,
+				0C3926E12A9766DF00FA68FB /* AppConstants.swift */,
 			);
-			path = Swift;
-			sourceTree = "<group>";
-		};
-		0C3926D42A973B3600FA68FB /* Objective C */ = {
-			isa = PBXGroup;
-			children = (
-				0C39269C2A9704BD00FA68FB /* Foundation */,
-			);
-			path = "Objective C";
+			path = AppUtilities;
 			sourceTree = "<group>";
 		};
 		26366DF577FACBB0F8928E6A /* Frameworks */ = {
@@ -460,6 +455,7 @@
 				0C3926D22A97358C00FA68FB /* UserDetails+CoreDataProperties.m in Sources */,
 				0C3926992A96FC0D00FA68FB /* UserListViewModel.m in Sources */,
 				0C3926652A96580A00FA68FB /* ListViewDemo.xcdatamodeld in Sources */,
+				0C3926E22A9766DF00FA68FB /* AppConstants.swift in Sources */,
 				0C39268C2A966A8400FA68FB /* UserDetailsViewController.swift in Sources */,
 				0C39265B2A96580A00FA68FB /* AppDelegate.swift in Sources */,
 				0C3926DA2A973C7400FA68FB /* NSString+CustomExtension.m in Sources */,

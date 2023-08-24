@@ -25,6 +25,8 @@ typedef void (^ModelArrayCompletionBlock)(NSMutableArray<UserListCellViewModel *
 //MARK: - Declared Method
 
 - (void)fetchUserDataFromAPI:(ModelArrayCompletionBlock)completion;
+- (void) saveAPIDataInLocalDB: (NSDictionary *) response;
+- (NSMutableArray<UserListCellViewModel *> *) fetchDataFromLocalDB;
 
 @end
 

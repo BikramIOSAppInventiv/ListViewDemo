@@ -43,15 +43,13 @@ private extension UserDetailsViewController {
     func setIntialUI() {
         self.navigationItem.title = self.objCModel.userName
         self.userProfilePicImageView.sd_setImage(with: URL(string: self.objCModel.largeUserImage), placeholderImage: UIImage(named: "userPlaceHolder.png"))
-        
-        self.userEmailLabel.text = "Email: \(self.objCModel.userEmailAddress)"
-        self.userRegisteredDateLabel.text = "Date Joined: \(self.objCModel.registeredDate)"
-        self.userDateOfBirthLabel.text = "DOB: \(self.objCModel.userDOB)"
-        
-        self.cityLabel.text = "City: \(self.objCModel.userCity)"
-        self.stateLabel.text = "State: \(self.objCModel.userState)"
-        self.countryLabel.text = "Country: \(self.objCModel.userCountry)"
-        self.postCodeLabel.text = "Postcode: \(self.objCModel.userPostcode)"
+        self.userEmailLabel.text = "\(AppConstants.Titles.Email): \(self.objCModel.userEmailAddress)"
+        self.userRegisteredDateLabel.text = "\(AppConstants.Titles.DateJoined): \(self.objCModel.registeredDate)"
+        self.userDateOfBirthLabel.text = "\(AppConstants.Titles.DOB): \(self.objCModel.userDOB)"
+        self.cityLabel.text = "\(AppConstants.Titles.City): \(self.objCModel.userCity)"
+        self.stateLabel.text = "\(AppConstants.Titles.State): \(self.objCModel.userState)"
+        self.countryLabel.text = "\(AppConstants.Titles.Country): \(self.objCModel.userCountry)"
+        self.postCodeLabel.text = "\(AppConstants.Titles.Postcode): \(self.objCModel.userPostcode)"
         self.userAgeLabel.text = "\(self.objCModel.userAge)"
     }
     

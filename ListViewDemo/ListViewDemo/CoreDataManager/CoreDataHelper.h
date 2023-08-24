@@ -12,12 +12,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CoreDataHelper : NSObject
 
+//MARK: - Properties
+
 + (instancetype)sharedInstance;
-- (void)saveContext;
-- (void)clearedLocalDB;
-- (NSArray *)fetchObjectsForEntity:(NSString *)entityName withPredicate:(NSPredicate *)predicate;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *context;
 @property (readonly, strong, nonatomic) NSPersistentContainer *persistentContainer;
+
+//MARK: - Declared Methods
+
+- (void)saveContext;
+- (void)clearedLocalDB:(NSString *)entityName;
+- (NSArray *)fetchObjectsForEntity:(NSString *)entityName withPredicate:(NSPredicate *)predicate;
 
 @end
 

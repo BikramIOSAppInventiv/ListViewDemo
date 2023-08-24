@@ -7,7 +7,6 @@
 
 #import "CoreDataHelper.h"
 
-
 @implementation CoreDataHelper
 
 + (instancetype)sharedInstance {
@@ -56,7 +55,7 @@
 
 - (NSArray *)fetchObjectsForEntity:(NSString *)entityName withPredicate:(NSPredicate *)predicate {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
-//    fetchRequest.predicate = predicate;
+    //    fetchRequest.predicate = predicate;
     
     NSError *error = nil;
     NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
@@ -65,25 +64,35 @@
         return @[];
     }else {
         // Fetched objects are available in the fetchedObjects array
-//        for (NSManagedObject *object in fetchedObjects) {
-//            // Access and use object properties as needed
-//            NSLog(@"Error fetching data: %@", object);
-//        }
+        //        for (NSManagedObject *object in fetchedObjects) {
+        //            // Access and use object properties as needed
+        //            NSLog(@"Error fetching data: %@", object);
+        //        }
     }
     return fetchedObjects;
 }
 
-- (void)clearedLocalDB {
-    NSManagedObjectContext *context = self.context;
-    if (context != nil) {
-        NSError *error = nil;
-        if ([context hasChanges] && ![context save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-            abort();
-        }else {
-            NSLog(@"Data saved successfully.");
+- (void)clearedLocalDB:(NSString *)entityName {
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
+    NSError *fetchError = nil;
+    NSArray *personsToDelete = [self.context executeFetchRequest:fetchRequest error:&fetchError];
+    
+    if (fetchError) {
+        NSLog(@"Error fetching data: %@", fetchError);
+    } else {
+        for (NSManagedObject *person in personsToDelete) {
+            [self.context deleteObject:person];
+        }
+        
+        NSError *saveError = nil;
+        if (![self.context save:&saveError]) {
+            NSLog(@"Error saving context: %@", saveError);
+        } else {
+            NSLog(@"Entity cleared successfully");
         }
     }
+    
 }
 
 @end

@@ -20,9 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *userEmailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userCountryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userRegisteredDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *countryTitleLabel;
 
 //MARK: - Declared Method
 
+- (void)setIntialUI;
 - (void)getModelData:(UserListCellViewModel *)model ;
 
 @end

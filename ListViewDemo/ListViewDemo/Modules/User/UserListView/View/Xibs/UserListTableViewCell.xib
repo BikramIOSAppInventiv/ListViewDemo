@@ -123,6 +123,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="countryTitleLabel" destination="VOP-cy-L5d" id="xp5-RV-AAz"/>
                 <outlet property="userCountryLabel" destination="z7Y-qh-stG" id="MpP-ic-ruY"/>
                 <outlet property="userEmailLabel" destination="UYd-zf-rGf" id="6oL-l0-XFL"/>
                 <outlet property="userNameLabel" destination="kYi-Ie-54r" id="ePE-ig-FC4"/>

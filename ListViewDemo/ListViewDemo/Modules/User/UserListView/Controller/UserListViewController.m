@@ -37,18 +37,23 @@
 }
 
 - (void)callGetUserDetailsDataAPI {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.viewModel fetchUserDataFromAPI:^(NSMutableArray<UserListCellViewModel *> * _Nullable models, NSError * _Nullable error) {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
-        if (error) {
-            // Handle error
-            NSLog(@"Error: %@", error);
-        } else {
-            // Use the fetched models
-            NSLog(@"Fetched models: %@", models);
-            [self.userListTableView reloadData];
-        }
-    }];
+    
+    if ([self.viewModel fetchDataFromLocalDB].count > 0) {
+        self.viewModel.personArray = [self.viewModel fetchDataFromLocalDB];
+    }else {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        [self.viewModel fetchUserDataFromAPI:^(NSMutableArray<UserListCellViewModel *> * _Nullable models, NSError * _Nullable error) {
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            if (error) {
+                // Handle error
+                NSLog(@"Error: %@", error);
+            } else {
+                // Use the fetched models
+                NSLog(@"Fetched models: %@", models);
+                [self.userListTableView reloadData];
+            }
+        }];
+    }
 }
 
 //MARK: - UITableView Delegate and DataSource Methods

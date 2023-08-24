@@ -19,46 +19,9 @@
         if (error) {
             NSLog(@"Error: %@", error);
         } else {
-            NSLog(@"Response: %@", response);
-            NSUInteger count = [response count];
-            NSLog(@"The count of key-value pairs is: %lu", (unsigned long)count);
-            self.personArray = [NSMutableArray array];
-            
-            for (NSDictionary *userDict in response[@"results"]) {
-                // Save an object
-                
-                UserDetails *userDetail = [NSEntityDescription insertNewObjectForEntityForName:@"UserDetails" inManagedObjectContext:CoreDataHelper.sharedInstance.context];
-                //
-                userDetail.title = userDict[@"name"][@"title"];
-                userDetail.first = userDict[@"name"][@"first"];
-                userDetail.last = userDict[@"name"][@"last"];
-                userDetail.email = userDict[@"email"];
-                userDetail.city = userDict[@"location"][@"city"];
-                userDetail.state = userDict[@"location"][@"state"];
-                userDetail.country = userDict[@"location"][@"country"];
-                userDetail.postcode = [userDict[@"location"][@"postcode"] integerValue];
-                userDetail.userRegisteredDate = userDict[@"registered"][@"date"];
-                userDetail.mediumProfilePic = userDict[@"picture"][@"medium"];
-                userDetail.largeProfilePic = userDict[@"picture"][@"large"];
-                userDetail.age = [userDict[@"dob"][@"age"] integerValue];
-                userDetail.userDOB = userDict[@"dob"][@"date"];
-                [CoreDataHelper.sharedInstance saveContext];
-            }
-            
-            // Fetch objects
-            
-            NSPredicate *fetchPredicate = [NSPredicate predicateWithFormat:@"title == %@", @"Value"];
-            
-            NSArray<UserDetails *> *fetchedItems = [CoreDataHelper.sharedInstance fetchObjectsForEntity:@"UserDetails" withPredicate:fetchPredicate];
-            
-            NSLog(@"%@", fetchedItems);
-            
-            for (UserDetails *userData in fetchedItems) {
-                NSLog(@"Key: %@", userData.title);
-                UserListCellViewModel *user = [[UserListCellViewModel alloc] init];
-                [self.personArray addObject: [user initWithUserDetailsModel:userData]];
-            }
-            
+            UserListViewModel *person = [[UserListViewModel alloc] init];
+            [person saveAPIDataInLocalDB:response];
+            self.personArray = [person fetchDataFromLocalDB];
             if (completion) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     // Return the fetched models to the completion block on the main thread
@@ -70,6 +33,47 @@
             
         }
     }];
+}
+
+- (void) saveAPIDataInLocalDB: (NSDictionary *) response {
+    
+    [CoreDataHelper.sharedInstance clearedLocalDB:@"UserDetails"];
+    for (NSDictionary *userDict in response[@"results"]) {
+        // Save an object
+        
+        UserDetails *userDetail = [NSEntityDescription insertNewObjectForEntityForName:@"UserDetails" inManagedObjectContext:CoreDataHelper.sharedInstance.context];
+        //
+        userDetail.title = userDict[@"name"][@"title"];
+        userDetail.first = userDict[@"name"][@"first"];
+        userDetail.last = userDict[@"name"][@"last"];
+        userDetail.email = userDict[@"email"];
+        userDetail.city = userDict[@"location"][@"city"];
+        userDetail.state = userDict[@"location"][@"state"];
+        userDetail.country = userDict[@"location"][@"country"];
+        userDetail.postcode = [userDict[@"location"][@"postcode"] integerValue];
+        userDetail.userRegisteredDate = userDict[@"registered"][@"date"];
+        userDetail.mediumProfilePic = userDict[@"picture"][@"medium"];
+        userDetail.largeProfilePic = userDict[@"picture"][@"large"];
+        userDetail.age = [userDict[@"dob"][@"age"] integerValue];
+        userDetail.userDOB = userDict[@"dob"][@"date"];
+        [CoreDataHelper.sharedInstance saveContext];
+    }
+}
+
+- (NSMutableArray<UserListCellViewModel *> *) fetchDataFromLocalDB {
+    // Fetch objects
+    self.personArray = [NSMutableArray array];
+    NSPredicate *fetchPredicate = [NSPredicate predicateWithFormat:@"title == %@", @"Value"];
+    
+    NSArray<UserDetails *> *fetchedItems = [CoreDataHelper.sharedInstance fetchObjectsForEntity:@"UserDetails" withPredicate:fetchPredicate];
+    
+    for (UserDetails *userData in fetchedItems) {
+        NSLog(@"Key: %@", userData.title);
+        UserListCellViewModel *user = [[UserListCellViewModel alloc] init];
+        [self.personArray addObject: [user initWithUserDetailsModel:userData]];
+    }
+    
+    return  self.personArray;
 }
 
 @end
