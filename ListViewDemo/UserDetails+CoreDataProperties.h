@@ -27,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int16_t age;
 @property (nullable, nonatomic, copy) NSString *largeProfilePic;
 @property (nullable, nonatomic, copy) NSString *mediumProfilePic;
+@property (nullable, nonatomic, copy) NSString *userDOB;
 
 @end
 

@@ -41,6 +41,7 @@
                 userDetail.mediumProfilePic = userDict[@"picture"][@"medium"];
                 userDetail.largeProfilePic = userDict[@"picture"][@"large"];
                 userDetail.age = [userDict[@"dob"][@"age"] integerValue];
+                userDetail.userDOB = userDict[@"dob"][@"date"];
                 [CoreDataHelper.sharedInstance saveContext];
             }
             

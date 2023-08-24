@@ -8,7 +8,6 @@
 #import <Foundation/Foundation.h>
 #import "UserDetails+CoreDataClass.h"
 #import "NSString+CustomExtension.h"
-#import "NSDate+TimeAgo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *userCountry;
 
 @property (nonatomic, strong) NSString *registeredDate;
+@property (nonatomic, strong) NSString *userDOB;
 
 //MARK: - Declared Method
 

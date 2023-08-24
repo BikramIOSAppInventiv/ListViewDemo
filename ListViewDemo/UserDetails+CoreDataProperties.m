@@ -26,5 +26,6 @@
 @dynamic age;
 @dynamic largeProfilePic;
 @dynamic mediumProfilePic;
+@dynamic userDOB;
 
 @end

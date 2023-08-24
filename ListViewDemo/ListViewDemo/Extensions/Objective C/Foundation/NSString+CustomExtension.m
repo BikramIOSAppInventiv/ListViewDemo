@@ -12,5 +12,6 @@
 @interface NSString (CustomExtension)
 
 - (NSString *)getDate;
+- (NSString *)timeAgo;
 
 @end

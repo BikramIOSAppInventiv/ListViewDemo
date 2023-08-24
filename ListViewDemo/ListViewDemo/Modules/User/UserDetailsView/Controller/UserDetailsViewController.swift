@@ -41,14 +41,17 @@ class UserDetailsViewController: UIViewController {
 private extension UserDetailsViewController {
     
     func setIntialUI() {
-        self.userProfilePicImageView.sd_setImage(with: URL(string: self.objCModel.largeUserImage), placeholderImage: UIImage(named: "placeholder.png"))
-        self.userEmailLabel.text = self.objCModel.userEmailAddress
-        self.userRegisteredDateLabel.text = self.objCModel.registeredDate
-        self.userDateOfBirthLabel.text = self.objCModel.registeredDate
-        self.cityLabel.text = self.objCModel.userCity
-        self.stateLabel.text = self.objCModel.userState
-        self.countryLabel.text = self.objCModel.userCountry
-        self.postCodeLabel.text = "\(self.objCModel.userPostcode)"
+        self.navigationItem.title = self.objCModel.userName
+        self.userProfilePicImageView.sd_setImage(with: URL(string: self.objCModel.largeUserImage), placeholderImage: UIImage(named: "userPlaceHolder.png"))
+        
+        self.userEmailLabel.text = "Email: \(self.objCModel.userEmailAddress)"
+        self.userRegisteredDateLabel.text = "Date Joined: \(self.objCModel.registeredDate)"
+        self.userDateOfBirthLabel.text = "DOB: \(self.objCModel.userDOB)"
+        
+        self.cityLabel.text = "City: \(self.objCModel.userCity)"
+        self.stateLabel.text = "State: \(self.objCModel.userState)"
+        self.countryLabel.text = "Country: \(self.objCModel.userCountry)"
+        self.postCodeLabel.text = "Postcode: \(self.objCModel.userPostcode)"
         self.userAgeLabel.text = "\(self.objCModel.userAge)"
     }
     

@@ -26,7 +26,7 @@
 
 - (void)getModelData:(UserListCellViewModel *)model {
     [self.userProfilePicImageView sd_setImageWithURL:[NSURL URLWithString: model.mediumUserImage]
-                                    placeholderImage:[UIImage imageNamed:@"placeholder.png"]];
+                                    placeholderImage:[UIImage imageNamed:@"userPlaceHolder.png"]];
     [self.userNameLabel setText: model.userName];
     [self.userEmailLabel setText: model.userEmailAddress];
     [self.userCountryLabel setText: model.userCountry];

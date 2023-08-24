@@ -25,9 +25,15 @@
         self.userAge = model.age;
         NSString *fullName = [NSString stringWithFormat:@"%@ %@ %@", model.title, model.first, model.last];
         self.userName = fullName;
-        NSString *inputString = model.userRegisteredDate;
-        NSString *uppercased = [inputString getDate];
-        self.registeredDate = uppercased;
+        NSString *registerDate = model.userRegisteredDate;
+        NSString *userRegisterDate = [registerDate timeAgo];
+        self.registeredDate = userRegisterDate;
+        
+        NSString *birthDate = model.userRegisteredDate;
+        NSString *userDOB = [birthDate getDate];
+        self.registeredDate = userRegisterDate;
+        
+        self.userDOB = userDOB;
     }
     return self;
 }
