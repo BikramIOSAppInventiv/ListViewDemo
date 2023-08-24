@@ -9,6 +9,8 @@
 
 @implementation UserListTableViewCell
 
+//MARK: - View Lifecycle Methods
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -20,7 +22,9 @@
     // Configure the view for the selected state
 }
 
-- (void)printName:(UserListModel *)model {
+//MARK: - Defined Method
+
+- (void)getModelData:(UserListModel *)model {
     NSString *fullName = [NSString stringWithFormat:@"%@ %@ %@", model.title, model.userFirstName, model.userLastName];
     [self.userNameLabel setText: fullName];
     [self.userEmailLabel setText: model.userEmailAddress];

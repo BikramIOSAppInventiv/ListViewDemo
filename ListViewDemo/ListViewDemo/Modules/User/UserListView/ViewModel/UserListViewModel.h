@@ -15,7 +15,12 @@ typedef void (^ModelArrayCompletionBlock)(NSMutableArray<UserListModel *> * _Nul
 
 @interface UserListViewModel : NSObject
 
+//MARK: - Properties
+
 @property (nonatomic, strong) NSMutableArray<UserListModel *> *personArray;
+
+//MARK: - Declared Method
+
 - (void)fetchUserDataFromAPI:(ModelArrayCompletionBlock)completion;
 
 @end

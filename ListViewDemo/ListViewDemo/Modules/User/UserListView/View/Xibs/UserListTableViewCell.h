@@ -21,7 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *userCountryLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userRegisteredDateLabel;
 
-- (void)printName:(UserListModel *)model ;
+//MARK: - Declared Method
+
+- (void)getModelData:(UserListModel *)model ;
 
 @end
 

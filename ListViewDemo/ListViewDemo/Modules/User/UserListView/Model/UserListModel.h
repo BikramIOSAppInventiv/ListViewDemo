@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UserListModel : NSObject
 
+//MARK: - Properties
+
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, assign) NSInteger userAge;
 @property (nonatomic, assign) NSInteger userPostcode;
@@ -29,6 +31,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *userCountry;
 
 @property (nonatomic, strong) NSString *registeredDate;
+
+//MARK: - Declared Method
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict;
 

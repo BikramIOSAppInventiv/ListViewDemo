@@ -18,13 +18,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self configureTableView];
+    [self configureViewModel];
+    [self callGetUserDetailsDataAPI];
+}
+
+//MARK: - Defined Methods
+
+- (void)configureTableView {
     UINib *nib = [UINib nibWithNibName:@"UserListTableViewCell" bundle:nil];
     [self.userListTableView registerNib:nib forCellReuseIdentifier:@"UserListTableViewCell"];
     self.userListTableView.delegate = self;
     self.userListTableView.dataSource = self;
-    
+}
+
+- (void)configureViewModel {
     self.viewModel = [[UserListViewModel alloc] init];
+}
+
+- (void)callGetUserDetailsDataAPI {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self.viewModel fetchUserDataFromAPI:^(NSMutableArray<UserListModel *> * _Nullable models, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -47,7 +59,7 @@
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UserListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserListTableViewCell"];
-    [cell printName: [self.viewModel.personArray objectAtIndex: indexPath.row]];
+    [cell getModelData: [self.viewModel.personArray objectAtIndex: indexPath.row]];
     return cell;
 }
 

@@ -9,6 +9,8 @@
 
 @implementation UserListViewModel
 
+//MARK: - Defined Method
+
 - (void)fetchUserDataFromAPI:(ModelArrayCompletionBlock)completion  {
     
     NSURL *apiURL = [NSURL URLWithString:@"https://randomuser.me/api/?page=3&results=10"];

@@ -9,6 +9,8 @@
 
 @implementation UserListModel
 
+//MARK: - Defined Method
+
 - (instancetype)initWithDictionary:(NSDictionary *)dict
 {
     self = [super init];

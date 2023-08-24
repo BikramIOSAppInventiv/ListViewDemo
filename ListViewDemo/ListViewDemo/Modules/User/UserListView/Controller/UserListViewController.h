@@ -20,9 +20,17 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: - IBOutlets
 
 @property (weak, nonatomic) IBOutlet UITableView *userListTableView;
-@property (nonatomic, strong) NSMutableArray<UserListModel *> *personArray;
 
+//MARK: - Properties
+
+@property (nonatomic, strong) NSMutableArray<UserListModel *> *personArray;
 @property (nonatomic, strong) UserListViewModel *viewModel;
+
+//MARK: - Declared Methods
+
+- (void)configureTableView;
+- (void)configureViewModel;
+- (void)callGetUserDetailsDataAPI;
 
 @end
 
