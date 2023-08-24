@@ -7,17 +7,20 @@
 
 #import <Foundation/Foundation.h>
 #import "APIManager.h"
-#import "UserListModel.h"
+#import "UserListCellViewModel.h"
+#import "CoreDataHelper.h"
+#import <CoreData/CoreData.h>
+#import "UserDetails+CoreDataClass.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^ModelArrayCompletionBlock)(NSMutableArray<UserListModel *> * _Nullable models, NSError * _Nullable error);
+typedef void (^ModelArrayCompletionBlock)(NSMutableArray<UserListCellViewModel *> * _Nullable models, NSError * _Nullable error);
 
 @interface UserListViewModel : NSObject
 
 //MARK: - Properties
 
-@property (nonatomic, strong) NSMutableArray<UserListModel *> *personArray;
+@property (nonatomic, strong) NSMutableArray<UserListCellViewModel *> *personArray;
 
 //MARK: - Declared Method
 

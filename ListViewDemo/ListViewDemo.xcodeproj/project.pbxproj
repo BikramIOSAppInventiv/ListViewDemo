@@ -18,9 +18,14 @@
 		0C3926842A96655E00FA68FB /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926832A96655E00FA68FB /* UserListViewController.m */; };
 		0C39268C2A966A8400FA68FB /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39268B2A966A8400FA68FB /* UserDetailsViewController.swift */; };
 		0C3926932A967EBD00FA68FB /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926922A967EBD00FA68FB /* APIManager.m */; };
-		0C3926962A96811600FA68FB /* UserListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926952A96811600FA68FB /* UserListModel.m */; };
+		0C3926962A96811600FA68FB /* UserListCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926952A96811600FA68FB /* UserListCellViewModel.m */; };
 		0C3926992A96FC0D00FA68FB /* UserListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926982A96FC0D00FA68FB /* UserListViewModel.m */; };
 		0C39269E2A9704D100FA68FB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39269D2A9704D100FA68FB /* UIView+Extension.swift */; };
+		0C3926B42A970F6700FA68FB /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926B32A970F6700FA68FB /* CoreDataHelper.m */; };
+		0C3926D12A97358C00FA68FB /* UserDetails+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926CF2A97358C00FA68FB /* UserDetails+CoreDataClass.m */; };
+		0C3926D22A97358C00FA68FB /* UserDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926D02A97358C00FA68FB /* UserDetails+CoreDataProperties.m */; };
+		0C3926DA2A973C7400FA68FB /* NSString+CustomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926D92A973C7400FA68FB /* NSString+CustomExtension.m */; };
+		0C3926DD2A9748AC00FA68FB /* NSDate+TimeAgo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926DC2A9748AC00FA68FB /* NSDate+TimeAgo.m */; };
 		141C9F01625106D8DF7AD512 /* Pods_ListViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,11 +47,21 @@
 		0C39268B2A966A8400FA68FB /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
 		0C3926912A967EBD00FA68FB /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
 		0C3926922A967EBD00FA68FB /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
-		0C3926942A96811600FA68FB /* UserListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListModel.h; sourceTree = "<group>"; };
-		0C3926952A96811600FA68FB /* UserListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListModel.m; sourceTree = "<group>"; };
+		0C3926942A96811600FA68FB /* UserListCellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListCellViewModel.h; sourceTree = "<group>"; };
+		0C3926952A96811600FA68FB /* UserListCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListCellViewModel.m; sourceTree = "<group>"; };
 		0C3926972A96FC0D00FA68FB /* UserListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListViewModel.h; sourceTree = "<group>"; };
 		0C3926982A96FC0D00FA68FB /* UserListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListViewModel.m; sourceTree = "<group>"; };
 		0C39269D2A9704D100FA68FB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		0C3926B22A970F6700FA68FB /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		0C3926B32A970F6700FA68FB /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		0C3926CD2A97358C00FA68FB /* UserDetails+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserDetails+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
+		0C3926CE2A97358C00FA68FB /* UserDetails+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserDetails+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
+		0C3926CF2A97358C00FA68FB /* UserDetails+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UserDetails+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
+		0C3926D02A97358C00FA68FB /* UserDetails+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UserDetails+CoreDataProperties.m"; sourceTree = SOURCE_ROOT; };
+		0C3926D82A973C7400FA68FB /* NSString+CustomExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CustomExtension.h"; sourceTree = "<group>"; };
+		0C3926D92A973C7400FA68FB /* NSString+CustomExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CustomExtension.m"; sourceTree = "<group>"; };
+		0C3926DB2A9748AC00FA68FB /* NSDate+TimeAgo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+TimeAgo.h"; sourceTree = "<group>"; };
+		0C3926DC2A9748AC00FA68FB /* NSDate+TimeAgo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TimeAgo.m"; sourceTree = "<group>"; };
 		57FBC85B23625F31F3984119 /* Pods-ListViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF51296456E0E75A859D409 /* Pods-ListViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.release.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +112,7 @@
 				0C3926722A9658A600FA68FB /* AppDelegate Files */,
 				0C3926812A965DAC00FA68FB /* Bridging-Header */,
 				0C39268D2A967E7000FA68FB /* APIManager */,
+				0C39269F2A97089900FA68FB /* CoreDataManager */,
 				0C3926732A9658DB00FA68FB /* Modules */,
 				0C39269A2A97049200FA68FB /* Extensions */,
 				0C3926712A96588B00FA68FB /* Support Files */,
@@ -155,8 +171,12 @@
 		0C3926762A96590700FA68FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0C3926942A96811600FA68FB /* UserListModel.h */,
-				0C3926952A96811600FA68FB /* UserListModel.m */,
+				0C3926CD2A97358C00FA68FB /* UserDetails+CoreDataProperties.h */,
+				0C3926CE2A97358C00FA68FB /* UserDetails+CoreDataClass.h */,
+				0C3926CF2A97358C00FA68FB /* UserDetails+CoreDataClass.m */,
+				0C3926D02A97358C00FA68FB /* UserDetails+CoreDataProperties.m */,
+				0C3926942A96811600FA68FB /* UserListCellViewModel.h */,
+				0C3926952A96811600FA68FB /* UserListCellViewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -266,8 +286,8 @@
 		0C39269A2A97049200FA68FB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0C39269B2A9704B100FA68FB /* UI */,
-				0C39269C2A9704BD00FA68FB /* Foundation */,
+				0C3926D42A973B3600FA68FB /* Objective C */,
+				0C3926D32A973B2500FA68FB /* Swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -283,8 +303,37 @@
 		0C39269C2A9704BD00FA68FB /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				0C3926D82A973C7400FA68FB /* NSString+CustomExtension.h */,
+				0C3926D92A973C7400FA68FB /* NSString+CustomExtension.m */,
+				0C3926DB2A9748AC00FA68FB /* NSDate+TimeAgo.h */,
+				0C3926DC2A9748AC00FA68FB /* NSDate+TimeAgo.m */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		0C39269F2A97089900FA68FB /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				0C3926B22A970F6700FA68FB /* CoreDataHelper.h */,
+				0C3926B32A970F6700FA68FB /* CoreDataHelper.m */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		0C3926D32A973B2500FA68FB /* Swift */ = {
+			isa = PBXGroup;
+			children = (
+				0C39269B2A9704B100FA68FB /* UI */,
+			);
+			path = Swift;
+			sourceTree = "<group>";
+		};
+		0C3926D42A973B3600FA68FB /* Objective C */ = {
+			isa = PBXGroup;
+			children = (
+				0C39269C2A9704BD00FA68FB /* Foundation */,
+			);
+			path = "Objective C";
 			sourceTree = "<group>";
 		};
 		26366DF577FACBB0F8928E6A /* Frameworks */ = {
@@ -413,15 +462,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C3926842A96655E00FA68FB /* UserListViewController.m in Sources */,
+				0C3926D22A97358C00FA68FB /* UserDetails+CoreDataProperties.m in Sources */,
 				0C3926992A96FC0D00FA68FB /* UserListViewModel.m in Sources */,
 				0C3926652A96580A00FA68FB /* ListViewDemo.xcdatamodeld in Sources */,
 				0C39268C2A966A8400FA68FB /* UserDetailsViewController.swift in Sources */,
+				0C3926DD2A9748AC00FA68FB /* NSDate+TimeAgo.m in Sources */,
 				0C39265B2A96580A00FA68FB /* AppDelegate.swift in Sources */,
+				0C3926DA2A973C7400FA68FB /* NSString+CustomExtension.m in Sources */,
 				0C3926932A967EBD00FA68FB /* APIManager.m in Sources */,
+				0C3926B42A970F6700FA68FB /* CoreDataHelper.m in Sources */,
 				0C39267F2A965D4100FA68FB /* UserListTableViewCell.m in Sources */,
-				0C3926962A96811600FA68FB /* UserListModel.m in Sources */,
+				0C3926962A96811600FA68FB /* UserListCellViewModel.m in Sources */,
 				0C39269E2A9704D100FA68FB /* UIView+Extension.swift in Sources */,
 				0C39265D2A96580A00FA68FB /* SceneDelegate.swift in Sources */,
+				0C3926D12A97358C00FA68FB /* UserDetails+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

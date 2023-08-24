@@ -23,10 +23,39 @@
             NSUInteger count = [response count];
             NSLog(@"The count of key-value pairs is: %lu", (unsigned long)count);
             self.personArray = [NSMutableArray array];
+            
             for (NSDictionary *userDict in response[@"results"]) {
-                NSLog(@"Key: %@", userDict);
-                UserListModel *user = [[UserListModel alloc] init];
-                [self.personArray addObject: [user initWithDictionary:userDict]];
+                // Save an object
+                
+                UserDetails *userDetail = [NSEntityDescription insertNewObjectForEntityForName:@"UserDetails" inManagedObjectContext:CoreDataHelper.sharedInstance.context];
+                //
+                userDetail.title = userDict[@"name"][@"title"];
+                userDetail.first = userDict[@"name"][@"first"];
+                userDetail.last = userDict[@"name"][@"last"];
+                userDetail.email = userDict[@"email"];
+                userDetail.city = userDict[@"location"][@"city"];
+                userDetail.state = userDict[@"location"][@"state"];
+                userDetail.country = userDict[@"location"][@"country"];
+                userDetail.postcode = [userDict[@"location"][@"postcode"] integerValue];
+                userDetail.userRegisteredDate = userDict[@"registered"][@"date"];
+                userDetail.mediumProfilePic = userDict[@"picture"][@"medium"];
+                userDetail.largeProfilePic = userDict[@"picture"][@"large"];
+                userDetail.age = [userDict[@"dob"][@"age"] integerValue];
+                [CoreDataHelper.sharedInstance saveContext];
+            }
+            
+            // Fetch objects
+            
+            NSPredicate *fetchPredicate = [NSPredicate predicateWithFormat:@"title == %@", @"Value"];
+            
+            NSArray<UserDetails *> *fetchedItems = [CoreDataHelper.sharedInstance fetchObjectsForEntity:@"UserDetails" withPredicate:fetchPredicate];
+            
+            NSLog(@"%@", fetchedItems);
+            
+            for (UserDetails *userData in fetchedItems) {
+                NSLog(@"Key: %@", userData.title);
+                UserListCellViewModel *user = [[UserListCellViewModel alloc] init];
+                [self.personArray addObject: [user initWithUserDetailsModel:userData]];
             }
             
             if (completion) {

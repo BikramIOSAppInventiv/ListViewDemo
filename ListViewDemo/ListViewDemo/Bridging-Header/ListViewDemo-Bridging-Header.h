@@ -3,5 +3,6 @@
 //
 
 
-#import "UserListModel.h"
+#import "UserListCellViewModel.h"
 #import <SDWebImage/SDWebImage.h>
+#import "UserDetails+CoreDataClass.h"

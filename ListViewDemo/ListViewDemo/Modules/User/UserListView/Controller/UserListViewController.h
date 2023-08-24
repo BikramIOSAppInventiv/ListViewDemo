@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: - Properties
 
-@property (nonatomic, strong) NSMutableArray<UserListModel *> *personArray;
+@property (nonatomic, strong) NSMutableArray<UserListCellViewModel *> *personArray;
 @property (nonatomic, strong) UserListViewModel *viewModel;
 
 //MARK: - Declared Methods

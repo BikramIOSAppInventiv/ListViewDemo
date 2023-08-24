@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UserListModel.h"
+#import "UserListCellViewModel.h"
 #import <SDWebImage/SDWebImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: - Declared Method
 
-- (void)getModelData:(UserListModel *)model ;
+- (void)getModelData:(UserListCellViewModel *)model ;
 
 @end
 

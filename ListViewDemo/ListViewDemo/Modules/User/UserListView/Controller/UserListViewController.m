@@ -38,7 +38,7 @@
 
 - (void)callGetUserDetailsDataAPI {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [self.viewModel fetchUserDataFromAPI:^(NSMutableArray<UserListModel *> * _Nullable models, NSError * _Nullable error) {
+    [self.viewModel fetchUserDataFromAPI:^(NSMutableArray<UserListCellViewModel *> * _Nullable models, NSError * _Nullable error) {
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         if (error) {
             // Handle error

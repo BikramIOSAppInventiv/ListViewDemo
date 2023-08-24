@@ -6,23 +6,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserDetails+CoreDataClass.h"
+#import "NSString+CustomExtension.h"
+#import "NSDate+TimeAgo.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UserListModel : NSObject
+@interface UserListCellViewModel : NSObject
 
 //MARK: - Properties
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *userName;
 @property (nonatomic, assign) NSInteger userAge;
 @property (nonatomic, assign) NSInteger userPostcode;
 
 @property (nonatomic, strong) NSString *mediumUserImage;
 @property (nonatomic, strong) NSString *largeUserImage;
-
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *userFirstName;
-@property (nonatomic, strong) NSString *userLastName;
 
 @property (nonatomic, strong) NSString *userEmailAddress;
 
@@ -34,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 //MARK: - Declared Method
 
-- (instancetype)initWithDictionary:(NSDictionary *)dict;
+- (instancetype)initWithUserDetailsModel:(UserDetails *)dict;
 
 @end
 

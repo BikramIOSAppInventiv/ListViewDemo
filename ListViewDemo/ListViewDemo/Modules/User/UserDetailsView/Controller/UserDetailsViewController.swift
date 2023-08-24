@@ -25,7 +25,7 @@ class UserDetailsViewController: UIViewController {
         
     //MARK: - Private Properties
     
-    var objCModel = UserListModel()
+    var objCModel = UserListCellViewModel()
     
     //MARK: - View Lifecycle Methods
     
@@ -34,8 +34,6 @@ class UserDetailsViewController: UIViewController {
         self.showUserAgeView.setDiamondShape(borderWidth: 1.0, borderColor: .clear)
         self.setIntialUI()
     }
-
-    
 }
 
 //MARK:- Private Methods
@@ -60,7 +58,7 @@ private extension UserDetailsViewController {
 
 extension UserDetailsViewController {
     
-    @objc func bindListViewData(model: UserListModel) {
+    @objc func bindListViewData(model: UserListCellViewModel) {
         objCModel = model
     }
     
