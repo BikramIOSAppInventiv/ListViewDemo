@@ -9,6 +9,8 @@
 
 @implementation ShowToast
 
+//MARK: - Public Methods
+
 + (void)showToast: (NSString *) message {
     
     // create a new style

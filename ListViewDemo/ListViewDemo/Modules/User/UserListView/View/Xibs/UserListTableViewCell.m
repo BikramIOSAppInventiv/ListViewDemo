@@ -15,6 +15,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    [self setIntialUI];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -27,6 +28,8 @@
 
 - (void)setIntialUI {
     [self.userNameLabel setText: kCountryTitle];
+    self.userProfilePicImageView.layer.cornerRadius = 5.0; // You can adjust the value as needed
+    self.userProfilePicImageView.layer.masksToBounds = YES;
 }
 
 + (NSString *)cellIdentifier {

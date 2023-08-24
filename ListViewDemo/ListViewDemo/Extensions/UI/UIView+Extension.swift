@@ -8,7 +8,8 @@
 import Foundation
 
 extension UIView {
-    func setDiamondShape(borderWidth: CGFloat, borderColor: UIColor) {
+    
+    func setDiamondShape() {
         let diamondPath = UIBezierPath()
         diamondPath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
         diamondPath.addLine(to: CGPoint(x: bounds.maxX, y: bounds.midY))
@@ -19,9 +20,13 @@ extension UIView {
         let maskLayer = CAShapeLayer()
         maskLayer.path = diamondPath.cgPath
         layer.mask = maskLayer
-        
-        layer.borderWidth = borderWidth
-        layer.borderColor = borderColor.cgColor
-        self.clipsToBounds = true
     }
+    
+    @objc func roundCorners(radius: CGFloat, borderWidth: CGFloat) {
+        layer.cornerRadius = radius
+        layer.borderWidth = borderWidth
+        layer.borderColor = UIColor(red: 238.0 / 255.0, green: 238.0 / 255.0, blue: 238.0 / 255.0, alpha: 1.0).cgColor
+        layer.masksToBounds = true
+    }
+    
 }

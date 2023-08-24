@@ -31,7 +31,11 @@ class UserDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showUserAgeView.setDiamondShape(borderWidth: 1.0, borderColor: .clear)
+        self.setIntialUIData()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         self.setIntialUI()
     }
 }
@@ -41,6 +45,12 @@ class UserDetailsViewController: UIViewController {
 private extension UserDetailsViewController {
     
     func setIntialUI() {
+        self.userProfilePicImageView.roundCorners(radius: 10.0, borderWidth: 0.0)
+        self.showUserAgeView.setDiamondShape()
+        self.userAgeLabel.setDiamondShape()
+    }
+    
+    func setIntialUIData() {
         self.navigationItem.title = self.objCModel.userName
         self.userProfilePicImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         self.userProfilePicImageView.sd_setImage(with: URL(string: self.objCModel.largeUserImage), placeholderImage: UIImage(named: "userPlaceHolder.png"))

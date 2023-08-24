@@ -341,10 +341,8 @@
 		0C3926E02A9766B300FA68FB /* AppUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				0C3926F92A97BC2700FA68FB /* AppConstants */,
 				0C3926F02A97B0A700FA68FB /* Common */,
-				0C3926E12A9766DF00FA68FB /* AppConstants.swift */,
-				0C3926ED2A97922500FA68FB /* Constants.h */,
-				0C3926EE2A97922500FA68FB /* Constants.m */,
 			);
 			path = AppUtilities;
 			sourceTree = "<group>";
@@ -374,6 +372,16 @@
 				0C3926F62A97B6A000FA68FB /* CommonMethods.m */,
 			);
 			path = CommonClasses;
+			sourceTree = "<group>";
+		};
+		0C3926F92A97BC2700FA68FB /* AppConstants */ = {
+			isa = PBXGroup;
+			children = (
+				0C3926E12A9766DF00FA68FB /* AppConstants.swift */,
+				0C3926ED2A97922500FA68FB /* Constants.h */,
+				0C3926EE2A97922500FA68FB /* Constants.m */,
+			);
+			path = AppConstants;
 			sourceTree = "<group>";
 		};
 		26366DF577FACBB0F8928E6A /* Frameworks */ = {

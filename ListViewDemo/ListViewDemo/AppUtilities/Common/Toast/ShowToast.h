@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ShowToast : NSObject
 
+//MARK: - Public Methods
+
 + (void)showToast: (NSString *) message;
 
 @end
