@@ -20,7 +20,9 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet private weak var stateLabel: UILabel!
     @IBOutlet private weak var countryLabel: UILabel!
     @IBOutlet private weak var postCodeLabel: UILabel!
-    
+    @IBOutlet private weak var showUserAgeView: UIView!
+    @IBOutlet private weak var userAgeLabel: UILabel!
+        
     //MARK: - Private Properties
     
     var objCModel = UserListModel()
@@ -29,8 +31,10 @@ class UserDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.showUserAgeView.setDiamondShape(borderWidth: 1.0, borderColor: .clear)
         self.setIntialUI()
     }
+
     
 }
 
@@ -39,16 +43,15 @@ class UserDetailsViewController: UIViewController {
 private extension UserDetailsViewController {
     
     func setIntialUI() {
-        DispatchQueue.main.async {
-            self.userProfilePicImageView.sd_setImage(with: URL(string: self.objCModel.largeUserImage), placeholderImage: UIImage(named: "placeholder.png"))
-            self.userEmailLabel.text = self.objCModel.userEmailAddress
-            self.userRegisteredDateLabel.text = self.objCModel.registeredDate
-            self.userDateOfBirthLabel.text = self.objCModel.registeredDate
-            self.cityLabel.text = self.objCModel.userCity
-            self.stateLabel.text = self.objCModel.userState
-            self.countryLabel.text = self.objCModel.userCountry
-//            self.postCodeLabel.text = "\(self.objCModel.userPostcode)"
-        }
+        self.userProfilePicImageView.sd_setImage(with: URL(string: self.objCModel.largeUserImage), placeholderImage: UIImage(named: "placeholder.png"))
+        self.userEmailLabel.text = self.objCModel.userEmailAddress
+        self.userRegisteredDateLabel.text = self.objCModel.registeredDate
+        self.userDateOfBirthLabel.text = self.objCModel.registeredDate
+        self.cityLabel.text = self.objCModel.userCity
+        self.stateLabel.text = self.objCModel.userState
+        self.countryLabel.text = self.objCModel.userCountry
+        self.postCodeLabel.text = "\(self.objCModel.userPostcode)"
+        self.userAgeLabel.text = "\(self.objCModel.userAge)"
     }
     
 }
@@ -61,4 +64,23 @@ extension UserDetailsViewController {
         objCModel = model
     }
     
+}
+
+extension UIView {
+    func setDiamondShape(borderWidth: CGFloat, borderColor: UIColor) {
+        let diamondPath = UIBezierPath()
+        diamondPath.move(to: CGPoint(x: bounds.midX, y: bounds.minY))
+        diamondPath.addLine(to: CGPoint(x: bounds.maxX, y: bounds.midY))
+        diamondPath.addLine(to: CGPoint(x: bounds.midX, y: bounds.maxY))
+        diamondPath.addLine(to: CGPoint(x: bounds.minX, y: bounds.midY))
+        diamondPath.close()
+
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = diamondPath.cgPath
+        layer.mask = maskLayer
+        
+        layer.borderWidth = borderWidth
+        layer.borderColor = borderColor.cgColor
+        self.clipsToBounds = true
+    }
 }

@@ -20,12 +20,11 @@
         self.userCity = dict[@"location"][@"city"];
         self.userState = dict[@"location"][@"state"];
         self.userCountry = dict[@"location"][@"country"];
-        self.userPostcode = dict[@"location"][@"postcode"];
+        self.userPostcode = [dict[@"location"][@"postcode"] integerValue];
         self.registeredDate = dict[@"registered"][@"date"];
         self.mediumUserImage = dict[@"picture"][@"medium"];
         self.largeUserImage = dict[@"picture"][@"large"];
-        
-        _age = [dict[@"age"] integerValue];
+        self.userAge = [dict[@"dob"][@"age"] integerValue];
     }
     return self;
 }

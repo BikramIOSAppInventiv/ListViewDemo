@@ -7,8 +7,9 @@
 
 #import <UIKit/UIKit.h>
 #import "APIManager.h"
-#import "UserListModel.h"
 #import "UserListTableViewCell.h"
+#import "UserListViewModel.h"
+#import "MBProgressHUD.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -20,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak, nonatomic) IBOutlet UITableView *userListTableView;
 @property (nonatomic, strong) NSMutableArray<UserListModel *> *personArray;
+
+@property (nonatomic, strong) UserListViewModel *viewModel;
 
 @end
 

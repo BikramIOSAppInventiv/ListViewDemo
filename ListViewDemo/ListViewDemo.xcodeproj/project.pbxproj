@@ -19,6 +19,7 @@
 		0C39268C2A966A8400FA68FB /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39268B2A966A8400FA68FB /* UserDetailsViewController.swift */; };
 		0C3926932A967EBD00FA68FB /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926922A967EBD00FA68FB /* APIManager.m */; };
 		0C3926962A96811600FA68FB /* UserListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926952A96811600FA68FB /* UserListModel.m */; };
+		0C3926992A96FC0D00FA68FB /* UserListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926982A96FC0D00FA68FB /* UserListViewModel.m */; };
 		141C9F01625106D8DF7AD512 /* Pods_ListViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		0C3926922A967EBD00FA68FB /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
 		0C3926942A96811600FA68FB /* UserListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListModel.h; sourceTree = "<group>"; };
 		0C3926952A96811600FA68FB /* UserListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListModel.m; sourceTree = "<group>"; };
+		0C3926972A96FC0D00FA68FB /* UserListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListViewModel.h; sourceTree = "<group>"; };
+		0C3926982A96FC0D00FA68FB /* UserListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListViewModel.m; sourceTree = "<group>"; };
 		57FBC85B23625F31F3984119 /* Pods-ListViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF51296456E0E75A859D409 /* Pods-ListViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.release.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,9 +132,9 @@
 		0C3926742A9658F700FA68FB /* UserListView */ = {
 			isa = PBXGroup;
 			children = (
+				0C3926762A96590700FA68FB /* Model */,
 				0C3926782A96591400FA68FB /* View */,
 				0C3926772A96590C00FA68FB /* ViewModel */,
-				0C3926762A96590700FA68FB /* Model */,
 				0C3926752A9658FF00FA68FB /* Controller */,
 			);
 			path = UserListView;
@@ -158,6 +161,8 @@
 		0C3926772A96590C00FA68FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0C3926972A96FC0D00FA68FB /* UserListViewModel.h */,
+				0C3926982A96FC0D00FA68FB /* UserListViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C3926842A96655E00FA68FB /* UserListViewController.m in Sources */,
+				0C3926992A96FC0D00FA68FB /* UserListViewModel.m in Sources */,
 				0C3926652A96580A00FA68FB /* ListViewDemo.xcdatamodeld in Sources */,
 				0C39268C2A966A8400FA68FB /* UserDetailsViewController.swift in Sources */,
 				0C39265B2A96580A00FA68FB /* AppDelegate.swift in Sources */,

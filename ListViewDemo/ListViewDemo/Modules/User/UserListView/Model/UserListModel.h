@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UserListModel : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, assign) NSInteger age;
+@property (nonatomic, assign) NSInteger userAge;
+@property (nonatomic, assign) NSInteger userPostcode;
 
 @property (nonatomic, strong) NSString *mediumUserImage;
 @property (nonatomic, strong) NSString *largeUserImage;
@@ -26,7 +27,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *userCity;
 @property (nonatomic, strong) NSString *userState;
 @property (nonatomic, strong) NSString *userCountry;
-@property (nonatomic, strong) NSString *userPostcode;
 
 @property (nonatomic, strong) NSString *registeredDate;
 
