@@ -26,6 +26,8 @@
 		0C3926D22A97358C00FA68FB /* UserDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926D02A97358C00FA68FB /* UserDetails+CoreDataProperties.m */; };
 		0C3926DA2A973C7400FA68FB /* NSString+CustomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926D92A973C7400FA68FB /* NSString+CustomExtension.m */; };
 		0C3926E22A9766DF00FA68FB /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926E12A9766DF00FA68FB /* AppConstants.swift */; };
+		0C3926E72A9780E000FA68FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C3926E62A9780E000FA68FB /* README.md */; };
+		0C3926E92A9780E800FA68FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0C3926E82A9780E800FA68FB /* .gitignore */; };
 		141C9F01625106D8DF7AD512 /* Pods_ListViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		0C3926D82A973C7400FA68FB /* NSString+CustomExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+CustomExtension.h"; sourceTree = "<group>"; };
 		0C3926D92A973C7400FA68FB /* NSString+CustomExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+CustomExtension.m"; sourceTree = "<group>"; };
 		0C3926E12A9766DF00FA68FB /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		0C3926E62A9780E000FA68FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0C3926E82A9780E800FA68FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
 		57FBC85B23625F31F3984119 /* Pods-ListViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF51296456E0E75A859D409 /* Pods-ListViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.release.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 		0C39264E2A96580A00FA68FB = {
 			isa = PBXGroup;
 			children = (
+				0C3926E62A9780E000FA68FB /* README.md */,
+				0C3926E82A9780E800FA68FB /* .gitignore */,
 				0C3926592A96580A00FA68FB /* ListViewDemo */,
 				0C3926582A96580A00FA68FB /* Products */,
 				063228A9F776E1C48CFBA45B /* Pods */,
@@ -397,7 +403,9 @@
 			files = (
 				0C3926802A965D4100FA68FB /* UserListTableViewCell.xib in Resources */,
 				0C39266A2A96580C00FA68FB /* LaunchScreen.storyboard in Resources */,
+				0C3926E72A9780E000FA68FB /* README.md in Resources */,
 				0C3926672A96580C00FA68FB /* Assets.xcassets in Resources */,
+				0C3926E92A9780E800FA68FB /* .gitignore in Resources */,
 				0C3926622A96580A00FA68FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,8 +630,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -654,8 +661,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

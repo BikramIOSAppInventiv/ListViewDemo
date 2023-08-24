@@ -42,6 +42,7 @@ private extension UserDetailsViewController {
     
     func setIntialUI() {
         self.navigationItem.title = self.objCModel.userName
+        self.userProfilePicImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         self.userProfilePicImageView.sd_setImage(with: URL(string: self.objCModel.largeUserImage), placeholderImage: UIImage(named: "userPlaceHolder.png"))
         self.userEmailLabel.text = "\(AppConstants.Titles.Email): \(self.objCModel.userEmailAddress)"
         self.userRegisteredDateLabel.text = "\(AppConstants.Titles.DateJoined): \(self.objCModel.registeredDate)"
