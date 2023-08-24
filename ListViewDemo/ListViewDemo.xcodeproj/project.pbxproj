@@ -30,6 +30,8 @@
 		0C3926E92A9780E800FA68FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0C3926E82A9780E800FA68FB /* .gitignore */; };
 		0C3926EC2A97857E00FA68FB /* UIAlertController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926EB2A97857E00FA68FB /* UIAlertController+Extensions.m */; };
 		0C3926EF2A97922500FA68FB /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926EE2A97922500FA68FB /* Constants.m */; };
+		0C3926F42A97B0C700FA68FB /* ShowToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926F32A97B0C700FA68FB /* ShowToast.m */; };
+		0C3926F72A97B6A000FA68FB /* CommonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926F62A97B6A000FA68FB /* CommonMethods.m */; };
 		141C9F01625106D8DF7AD512 /* Pods_ListViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,10 @@
 		0C3926EB2A97857E00FA68FB /* UIAlertController+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extensions.m"; sourceTree = "<group>"; };
 		0C3926ED2A97922500FA68FB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		0C3926EE2A97922500FA68FB /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		0C3926F22A97B0C700FA68FB /* ShowToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowToast.h; sourceTree = "<group>"; };
+		0C3926F32A97B0C700FA68FB /* ShowToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowToast.m; sourceTree = "<group>"; };
+		0C3926F52A97B6A000FA68FB /* CommonMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMethods.h; sourceTree = "<group>"; };
+		0C3926F62A97B6A000FA68FB /* CommonMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonMethods.m; sourceTree = "<group>"; };
 		57FBC85B23625F31F3984119 /* Pods-ListViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF51296456E0E75A859D409 /* Pods-ListViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.release.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -335,11 +341,39 @@
 		0C3926E02A9766B300FA68FB /* AppUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				0C3926F02A97B0A700FA68FB /* Common */,
 				0C3926E12A9766DF00FA68FB /* AppConstants.swift */,
 				0C3926ED2A97922500FA68FB /* Constants.h */,
 				0C3926EE2A97922500FA68FB /* Constants.m */,
 			);
 			path = AppUtilities;
+			sourceTree = "<group>";
+		};
+		0C3926F02A97B0A700FA68FB /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0C3926F82A97B78F00FA68FB /* CommonClasses */,
+				0C3926F12A97B0B200FA68FB /* Toast */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0C3926F12A97B0B200FA68FB /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				0C3926F22A97B0C700FA68FB /* ShowToast.h */,
+				0C3926F32A97B0C700FA68FB /* ShowToast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		0C3926F82A97B78F00FA68FB /* CommonClasses */ = {
+			isa = PBXGroup;
+			children = (
+				0C3926F52A97B6A000FA68FB /* CommonMethods.h */,
+				0C3926F62A97B6A000FA68FB /* CommonMethods.m */,
+			);
+			path = CommonClasses;
 			sourceTree = "<group>";
 		};
 		26366DF577FACBB0F8928E6A /* Frameworks */ = {
@@ -471,6 +505,7 @@
 			files = (
 				0C3926842A96655E00FA68FB /* UserListViewController.m in Sources */,
 				0C3926D22A97358C00FA68FB /* UserDetails+CoreDataProperties.m in Sources */,
+				0C3926F42A97B0C700FA68FB /* ShowToast.m in Sources */,
 				0C3926992A96FC0D00FA68FB /* UserListViewModel.m in Sources */,
 				0C3926652A96580A00FA68FB /* ListViewDemo.xcdatamodeld in Sources */,
 				0C3926E22A9766DF00FA68FB /* AppConstants.swift in Sources */,
@@ -483,6 +518,7 @@
 				0C39267F2A965D4100FA68FB /* UserListTableViewCell.m in Sources */,
 				0C3926962A96811600FA68FB /* UserListCellViewModel.m in Sources */,
 				0C39269E2A9704D100FA68FB /* UIView+Extension.swift in Sources */,
+				0C3926F72A97B6A000FA68FB /* CommonMethods.m in Sources */,
 				0C39265D2A96580A00FA68FB /* SceneDelegate.swift in Sources */,
 				0C3926EC2A97857E00FA68FB /* UIAlertController+Extensions.m in Sources */,
 				0C3926D12A97358C00FA68FB /* UserDetails+CoreDataClass.m in Sources */,

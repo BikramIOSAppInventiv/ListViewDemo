@@ -30,6 +30,7 @@
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+                    [ShowToast showToast: error.description];
                     abort();
                 }
             }];
@@ -53,6 +54,7 @@
         NSError *error = nil;
         if ([context hasChanges] && ![context save:&error]) {
             NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+            [ShowToast showToast: error.description];
             abort();
         }else {
             NSLog(@"Data saved successfully.");
@@ -70,6 +72,7 @@
     NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
     if (error) {
         NSLog(@"Error fetching data: %@", error);
+        [ShowToast showToast: error.description];
         return @[];
     }else {
         // Fetched objects are available in the fetchedObjects array
@@ -91,6 +94,7 @@
     
     if (fetchError) {
         NSLog(@"Error fetching data: %@", fetchError);
+        [ShowToast showToast: fetchError.description];
     } else {
         for (NSManagedObject *person in personsToDelete) {
             [self.context deleteObject:person];
@@ -99,6 +103,7 @@
         NSError *saveError = nil;
         if (![self.context save:&saveError]) {
             NSLog(@"Error saving context: %@", saveError);
+            [ShowToast showToast: saveError.description];
         } else {
             NSLog(@"Entity cleared successfully");
         }

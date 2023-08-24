@@ -8,5 +8,6 @@ target 'ListViewDemo' do
   # Pods for ListViewDemo
   pod 'SDWebImage'
   pod 'MBProgressHUD'
+  pod 'Toast'
 
 end

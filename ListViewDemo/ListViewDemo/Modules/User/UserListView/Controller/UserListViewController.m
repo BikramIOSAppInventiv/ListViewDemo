@@ -48,15 +48,9 @@
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
                 if (error) {
                     // Handle error
-                    UIAlertController *alert = [UIAlertController alertWithTitle: kWarningTitle message:error.description];
-                    [alert addActionWithTitle: kOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-                        // Handle OK action
-                    }];
-                    [self presentViewController:alert animated:YES completion:nil];
-    //                NSLog(@"Error: %@", error);
+                    [ShowToast showToast: error.description];
                 } else {
                     // Use the fetched models
-                    NSLog(@"Fetched models: %@", models);
                     [self.userListTableView reloadData];
                 }
             });

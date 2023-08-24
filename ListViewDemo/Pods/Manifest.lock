@@ -3,20 +3,24 @@ PODS:
   - SDWebImage (5.17.0):
     - SDWebImage/Core (= 5.17.0)
   - SDWebImage/Core (5.17.0)
+  - Toast (4.0.0)
 
 DEPENDENCIES:
   - MBProgressHUD
   - SDWebImage
+  - Toast
 
 SPEC REPOS:
   trunk:
     - MBProgressHUD
     - SDWebImage
+    - Toast
 
 SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   SDWebImage: 750adf017a315a280c60fde706ab1e552a3ae4e9
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: d2e4142bdb59a466d2d5dcb7cdab40562c8f1783
+PODFILE CHECKSUM: b28137ead063562773382b6adc0bb3e3677c5d70
 
 COCOAPODS: 1.11.3

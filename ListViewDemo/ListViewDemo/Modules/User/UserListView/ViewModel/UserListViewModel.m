@@ -23,7 +23,7 @@
 
 - (void)fetchUserDataFromAPI:(ModelArrayCompletionBlock)completion  {
     
-    NSString *urlString = [NSString stringWithFormat:@"%@%@", kBaseURL, kAPIKey];
+    NSString *urlString = [NSString stringWithFormat:@"%@ %@", kBaseURL, kAPIKey];
     
     NSURL *apiURL = [NSURL URLWithString:urlString];
     
