@@ -39,19 +39,27 @@
 - (void)callGetUserDetailsDataAPI {
     
     if ([self.viewModel fetchDataFromLocalDB].count > 0) {
-        self.viewModel.personArray = [self.viewModel fetchDataFromLocalDB];
+        [self.viewModel fetchDataFromLocalDB];
     }else {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self.viewModel fetchUserDataFromAPI:^(NSMutableArray<UserListCellViewModel *> * _Nullable models, NSError * _Nullable error) {
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-            if (error) {
-                // Handle error
-                NSLog(@"Error: %@", error);
-            } else {
-                // Use the fetched models
-                NSLog(@"Fetched models: %@", models);
-                [self.userListTableView reloadData];
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                // Return the fetched models to the completion block on the main thread
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                if (error) {
+                    // Handle error
+                    UIAlertController *alert = [UIAlertController alertWithTitle: kWarningTitle message:error.description];
+                    [alert addActionWithTitle: kOKTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                        // Handle OK action
+                    }];
+                    [self presentViewController:alert animated:YES completion:nil];
+    //                NSLog(@"Error: %@", error);
+                } else {
+                    // Use the fetched models
+                    NSLog(@"Fetched models: %@", models);
+                    [self.userListTableView reloadData];
+                }
+            });
         }];
     }
 }
@@ -59,12 +67,12 @@
 //MARK: - UITableView Delegate and DataSource Methods
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.viewModel.personArray.count;
+    return self.viewModel.totalUserRecords;
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UserListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserListTableViewCell"];
-    [cell getModelData: [self.viewModel.personArray objectAtIndex: indexPath.row]];
+    [cell getModelData: [self.viewModel getUserRecords:indexPath.row]];
     return cell;
 }
 
@@ -72,7 +80,7 @@
     
     UserDetailsViewController *controler = [self.storyboard instantiateViewControllerWithIdentifier:@"UserDetailsViewController"];
     [controler setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
-    [controler bindListViewDataWithModel: [self.viewModel.personArray objectAtIndex:indexPath.row]];
+    [controler bindListViewDataWithModel: [self.viewModel getUserRecords:indexPath.row]];
     [self.navigationController pushViewController:controler animated:YES];
     
 }

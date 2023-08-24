@@ -21,13 +21,15 @@
 		0C3926962A96811600FA68FB /* UserListCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926952A96811600FA68FB /* UserListCellViewModel.m */; };
 		0C3926992A96FC0D00FA68FB /* UserListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926982A96FC0D00FA68FB /* UserListViewModel.m */; };
 		0C39269E2A9704D100FA68FB /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C39269D2A9704D100FA68FB /* UIView+Extension.swift */; };
-		0C3926B42A970F6700FA68FB /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926B32A970F6700FA68FB /* CoreDataHelper.m */; };
+		0C3926B42A970F6700FA68FB /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926B32A970F6700FA68FB /* CoreDataManager.m */; };
 		0C3926D12A97358C00FA68FB /* UserDetails+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926CF2A97358C00FA68FB /* UserDetails+CoreDataClass.m */; };
 		0C3926D22A97358C00FA68FB /* UserDetails+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926D02A97358C00FA68FB /* UserDetails+CoreDataProperties.m */; };
 		0C3926DA2A973C7400FA68FB /* NSString+CustomExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926D92A973C7400FA68FB /* NSString+CustomExtension.m */; };
 		0C3926E22A9766DF00FA68FB /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926E12A9766DF00FA68FB /* AppConstants.swift */; };
 		0C3926E72A9780E000FA68FB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0C3926E62A9780E000FA68FB /* README.md */; };
 		0C3926E92A9780E800FA68FB /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0C3926E82A9780E800FA68FB /* .gitignore */; };
+		0C3926EC2A97857E00FA68FB /* UIAlertController+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926EB2A97857E00FA68FB /* UIAlertController+Extensions.m */; };
+		0C3926EF2A97922500FA68FB /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3926EE2A97922500FA68FB /* Constants.m */; };
 		141C9F01625106D8DF7AD512 /* Pods_ListViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +56,8 @@
 		0C3926972A96FC0D00FA68FB /* UserListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListViewModel.h; sourceTree = "<group>"; };
 		0C3926982A96FC0D00FA68FB /* UserListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListViewModel.m; sourceTree = "<group>"; };
 		0C39269D2A9704D100FA68FB /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		0C3926B22A970F6700FA68FB /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
-		0C3926B32A970F6700FA68FB /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		0C3926B22A970F6700FA68FB /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		0C3926B32A970F6700FA68FB /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		0C3926CD2A97358C00FA68FB /* UserDetails+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserDetails+CoreDataProperties.h"; sourceTree = SOURCE_ROOT; };
 		0C3926CE2A97358C00FA68FB /* UserDetails+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserDetails+CoreDataClass.h"; sourceTree = SOURCE_ROOT; };
 		0C3926CF2A97358C00FA68FB /* UserDetails+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UserDetails+CoreDataClass.m"; sourceTree = SOURCE_ROOT; };
@@ -65,6 +67,10 @@
 		0C3926E12A9766DF00FA68FB /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		0C3926E62A9780E000FA68FB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		0C3926E82A9780E800FA68FB /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = ../.gitignore; sourceTree = "<group>"; };
+		0C3926EA2A97857E00FA68FB /* UIAlertController+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extensions.h"; sourceTree = "<group>"; };
+		0C3926EB2A97857E00FA68FB /* UIAlertController+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extensions.m"; sourceTree = "<group>"; };
+		0C3926ED2A97922500FA68FB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		0C3926EE2A97922500FA68FB /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		57FBC85B23625F31F3984119 /* Pods-ListViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D0150539507F1D59EF12D97 /* Pods_ListViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ListViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCF51296456E0E75A859D409 /* Pods-ListViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ListViewDemo.release.xcconfig"; path = "Target Support Files/Pods-ListViewDemo/Pods-ListViewDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -302,6 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				0C39269D2A9704D100FA68FB /* UIView+Extension.swift */,
+				0C3926EA2A97857E00FA68FB /* UIAlertController+Extensions.h */,
+				0C3926EB2A97857E00FA68FB /* UIAlertController+Extensions.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -318,8 +326,8 @@
 		0C39269F2A97089900FA68FB /* CoreDataManager */ = {
 			isa = PBXGroup;
 			children = (
-				0C3926B22A970F6700FA68FB /* CoreDataHelper.h */,
-				0C3926B32A970F6700FA68FB /* CoreDataHelper.m */,
+				0C3926B22A970F6700FA68FB /* CoreDataManager.h */,
+				0C3926B32A970F6700FA68FB /* CoreDataManager.m */,
 			);
 			path = CoreDataManager;
 			sourceTree = "<group>";
@@ -328,6 +336,8 @@
 			isa = PBXGroup;
 			children = (
 				0C3926E12A9766DF00FA68FB /* AppConstants.swift */,
+				0C3926ED2A97922500FA68FB /* Constants.h */,
+				0C3926EE2A97922500FA68FB /* Constants.m */,
 			);
 			path = AppUtilities;
 			sourceTree = "<group>";
@@ -467,12 +477,14 @@
 				0C39268C2A966A8400FA68FB /* UserDetailsViewController.swift in Sources */,
 				0C39265B2A96580A00FA68FB /* AppDelegate.swift in Sources */,
 				0C3926DA2A973C7400FA68FB /* NSString+CustomExtension.m in Sources */,
+				0C3926EF2A97922500FA68FB /* Constants.m in Sources */,
 				0C3926932A967EBD00FA68FB /* APIManager.m in Sources */,
-				0C3926B42A970F6700FA68FB /* CoreDataHelper.m in Sources */,
+				0C3926B42A970F6700FA68FB /* CoreDataManager.m in Sources */,
 				0C39267F2A965D4100FA68FB /* UserListTableViewCell.m in Sources */,
 				0C3926962A96811600FA68FB /* UserListCellViewModel.m in Sources */,
 				0C39269E2A9704D100FA68FB /* UIView+Extension.swift in Sources */,
 				0C39265D2A96580A00FA68FB /* SceneDelegate.swift in Sources */,
+				0C3926EC2A97857E00FA68FB /* UIAlertController+Extensions.m in Sources */,
 				0C3926D12A97358C00FA68FB /* UserDetails+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

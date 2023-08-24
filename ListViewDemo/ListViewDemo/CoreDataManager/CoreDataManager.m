@@ -5,12 +5,12 @@
 //  Created by Bikramjeet Singh  on 24/08/23.
 //
 
-#import "CoreDataHelper.h"
+#import "CoreDataManager.h"
 
-@implementation CoreDataHelper
+@implementation CoreDataManager
 
 + (instancetype)sharedInstance {
-    static CoreDataHelper *sharedInstance = nil;
+    static CoreDataManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];
@@ -23,7 +23,7 @@
 - (NSPersistentContainer *)persistentContainer {
     @synchronized (self) {
         if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"ListViewDemo"]; // Replace with your data model name
+            _persistentContainer = [[NSPersistentContainer alloc] initWithName: kLocalDBName]; // Replace with your data model name
             [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
                 if (error != nil) {
                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
@@ -40,6 +40,8 @@
     return self.persistentContainer.viewContext;
 }
 
+//Save Data In Local DB
+
 - (void)saveContext {
     NSManagedObjectContext *context = self.context;
     if (context != nil) {
@@ -53,9 +55,11 @@
     }
 }
 
-- (NSArray *)fetchObjectsForEntity:(NSString *)entityName withPredicate:(NSPredicate *)predicate {
+//Fetch Data In Local DB
+
+- (NSArray *)fetchObjectsForEntity:(NSString *)entityName {
+    
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    //    fetchRequest.predicate = predicate;
     
     NSError *error = nil;
     NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
@@ -71,6 +75,8 @@
     }
     return fetchedObjects;
 }
+
+//Cleared Data In Local DB
 
 - (void)clearedLocalDB:(NSString *)entityName {
     

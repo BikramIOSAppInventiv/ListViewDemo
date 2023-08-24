@@ -6,5 +6,5 @@
 #import "UserListCellViewModel.h"
 #import <SDWebImage/SDWebImage.h>
 #import "UserDetails+CoreDataClass.h"
-#import "CoreDataHelper.h"
+#import "CoreDataManager.h"
 

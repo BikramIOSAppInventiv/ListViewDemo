@@ -8,9 +8,10 @@
 #import <Foundation/Foundation.h>
 #import "APIManager.h"
 #import "UserListCellViewModel.h"
-#import "CoreDataHelper.h"
+#import "CoreDataManager.h"
 #import <CoreData/CoreData.h>
 #import "UserDetails+CoreDataClass.h"
+#import "Constants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +22,8 @@ typedef void (^ModelArrayCompletionBlock)(NSMutableArray<UserListCellViewModel *
 //MARK: - Properties
 
 @property (nonatomic, strong) NSMutableArray<UserListCellViewModel *> *personArray;
+- (NSInteger)totalUserRecords;
+- (UserListCellViewModel *)getUserRecords: (NSInteger)index;
 
 //MARK: - Declared Method
 

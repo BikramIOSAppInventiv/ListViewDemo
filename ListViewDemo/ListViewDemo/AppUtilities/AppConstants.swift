@@ -8,7 +8,7 @@
 import Foundation
 
 enum AppConstants {
-
+    
     enum Titles {
         static let Email = "Email"
         static let DateJoined = "Date Joined"
@@ -18,8 +18,4 @@ enum AppConstants {
         static let Country = "Country"
         static let Postcode = "Postcode"
     }
-}
-
-struct MyConstants {
-    static let Email = "Email"
 }

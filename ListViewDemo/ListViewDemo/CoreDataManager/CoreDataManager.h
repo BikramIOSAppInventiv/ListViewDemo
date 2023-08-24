@@ -7,10 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Constants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CoreDataHelper : NSObject
+@interface CoreDataManager : NSObject
 
 //MARK: - Properties
 
@@ -22,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)saveContext;
 - (void)clearedLocalDB:(NSString *)entityName;
-- (NSArray *)fetchObjectsForEntity:(NSString *)entityName withPredicate:(NSPredicate *)predicate;
+- (NSArray *)fetchObjectsForEntity:(NSString *)entityName;
 
 @end
 
