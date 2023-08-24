@@ -23,11 +23,11 @@
     [self callGetUserDetailsDataAPI];
 }
 
-//MARK: - Defined Methods
+//MARK: - Public Methods
 
 - (void)configureTableView {
-    UINib *nib = [UINib nibWithNibName:@"UserListTableViewCell" bundle:nil];
-    [self.userListTableView registerNib:nib forCellReuseIdentifier:@"UserListTableViewCell"];
+    UINib *nib = [UINib nibWithNibName: UserListTableViewCell.cellIdentifier bundle:nil];
+    [self.userListTableView registerNib:nib forCellReuseIdentifier: UserListTableViewCell.cellIdentifier];
     self.userListTableView.delegate = self;
     self.userListTableView.dataSource = self;
 }
@@ -71,14 +71,14 @@
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UserListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserListTableViewCell"];
+    UserListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier: UserListTableViewCell.cellIdentifier];
     [cell getModelData: [self.viewModel getUserRecords:indexPath.row]];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UserDetailsViewController *controler = [self.storyboard instantiateViewControllerWithIdentifier:@"UserDetailsViewController"];
+    UserDetailsViewController *controler = [self.storyboard instantiateViewControllerWithIdentifier: kUserDetailsViewController];
     [controler setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
     [controler bindListViewDataWithModel: [self.viewModel getUserRecords:indexPath.row]];
     [self.navigationController pushViewController:controler animated:YES];

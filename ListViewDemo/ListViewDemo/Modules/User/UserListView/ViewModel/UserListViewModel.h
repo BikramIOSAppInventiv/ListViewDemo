@@ -23,10 +23,10 @@ typedef void (^ModelArrayCompletionBlock)(NSMutableArray<UserListCellViewModel *
 
 @property (nonatomic, strong) NSMutableArray<UserListCellViewModel *> *personArray;
 - (NSInteger)totalUserRecords;
+
+//MARK: - Public Methods
+
 - (UserListCellViewModel *)getUserRecords: (NSInteger)index;
-
-//MARK: - Declared Method
-
 - (void)fetchUserDataFromAPI:(ModelArrayCompletionBlock)completion;
 - (void) saveAPIDataInLocalDB: (NSDictionary *) response;
 - (NSMutableArray<UserListCellViewModel *> *) fetchDataFromLocalDB;

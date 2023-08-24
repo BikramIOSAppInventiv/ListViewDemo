@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *registeredDate;
 @property (nonatomic, strong) NSString *userDOB;
 
-//MARK: - Declared Method
+//MARK: - Public Methods
 
 - (instancetype)initWithUserDetailsModel:(UserDetails *)dict;
 

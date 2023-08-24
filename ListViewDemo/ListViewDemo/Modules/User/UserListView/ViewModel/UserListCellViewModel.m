@@ -9,7 +9,7 @@
 
 @implementation UserListCellViewModel
 
-//MARK: - Defined Method
+//MARK: - Public Methods
 
 - (instancetype)initWithUserDetailsModel:(UserDetails *)model
 {

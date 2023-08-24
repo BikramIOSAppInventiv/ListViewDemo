@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface APIManager : NSObject
 
+//MARK: - Public Methods
+
 + (void)fetchDataFromAPIWithURL:(NSURL *)url completion:(void (^)(NSDictionary *response, NSError *error))completion;
 
 @end

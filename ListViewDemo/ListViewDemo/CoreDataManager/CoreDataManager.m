@@ -9,6 +9,8 @@
 
 @implementation CoreDataManager
 
+//MARK: - Private Methods
+
 + (instancetype)sharedInstance {
     static CoreDataManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -19,6 +21,7 @@
 }
 
 @synthesize persistentContainer = _persistentContainer;
+
 
 - (NSPersistentContainer *)persistentContainer {
     @synchronized (self) {
@@ -39,6 +42,8 @@
 - (NSManagedObjectContext *)context {
     return self.persistentContainer.viewContext;
 }
+
+//MARK: - Public Methods
 
 //Save Data In Local DB
 

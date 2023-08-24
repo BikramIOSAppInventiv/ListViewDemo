@@ -9,6 +9,8 @@
 
 @implementation APIManager
 
+//MARK: - Public Methods
+
 + (void)fetchDataFromAPIWithURL:(NSURL *)url completion:(void (^)(NSDictionary *response, NSError *error))completion {
     NSURLSession *session = [NSURLSession sharedSession];
     

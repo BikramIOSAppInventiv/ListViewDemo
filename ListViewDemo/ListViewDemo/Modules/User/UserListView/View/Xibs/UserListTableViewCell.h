@@ -6,12 +6,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Constants.h"
 #import "UserListCellViewModel.h"
 #import <SDWebImage/SDWebImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UserListTableViewCell : UITableViewCell
+
+//MARK: - Properties
+
++ (NSString *)cellIdentifier;
 
 //MARK: - IBOutlets
 
@@ -22,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *userRegisteredDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *countryTitleLabel;
 
-//MARK: - Declared Method
+//MARK: - Public Methods
 
 - (void)setIntialUI;
 - (void)getModelData:(UserListCellViewModel *)model ;

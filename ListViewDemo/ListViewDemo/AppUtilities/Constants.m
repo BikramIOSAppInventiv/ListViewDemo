@@ -12,6 +12,11 @@
 NSString *const kAppName = @"ListViewDemo";
 NSString *const kWarningTitle = @"Warning";
 NSString *const kOKTitle = @"OK";
+NSString *const kCountryTitle = @"Country";
+
+//Storyboard Identifiers
+
+NSString *const kUserDetailsViewController = @"UserDetailsViewController";
 
 //API Constant
 

@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray<UserListCellViewModel *> *personArray;
 @property (nonatomic, strong) UserListViewModel *viewModel;
 
-//MARK: - Declared Methods
+//MARK: - Public Methods
 
 - (void)configureTableView;
 - (void)configureViewModel;

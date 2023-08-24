@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, strong, nonatomic) NSManagedObjectContext *context;
 @property (readonly, strong, nonatomic) NSPersistentContainer *persistentContainer;
 
-//MARK: - Declared Methods
+//MARK: - Public Methods
 
 - (void)saveContext;
 - (void)clearedLocalDB:(NSString *)entityName;

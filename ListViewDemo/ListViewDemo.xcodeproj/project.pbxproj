@@ -250,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				0C39268A2A966A6C00FA68FB /* Model */,
-				0C3926892A966A6300FA68FB /* Views */,
+				0C3926892A966A6300FA68FB /* View */,
 				0C3926882A966A5C00FA68FB /* ViewModel */,
 				0C3926872A966A5500FA68FB /* Controller */,
 			);
@@ -272,11 +272,11 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0C3926892A966A6300FA68FB /* Views */ = {
+		0C3926892A966A6300FA68FB /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		0C39268A2A966A6C00FA68FB /* Model */ = {

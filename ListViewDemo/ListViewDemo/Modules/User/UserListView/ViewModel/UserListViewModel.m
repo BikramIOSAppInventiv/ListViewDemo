@@ -9,15 +9,17 @@
 
 @implementation UserListViewModel
 
+//MARK: - Properties
+
 - (NSInteger)totalUserRecords {
     return  self.personArray.count;
 }
 
+//MARK: - Public Methods
+
 - (UserListCellViewModel *)getUserRecords: (NSInteger)index {
     return [self.personArray objectAtIndex: index];
 }
-
-//MARK: - Defined Method
 
 - (void)fetchUserDataFromAPI:(ModelArrayCompletionBlock)completion  {
     

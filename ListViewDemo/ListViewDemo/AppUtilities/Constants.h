@@ -12,6 +12,11 @@
 extern NSString *const kAppName;
 extern NSString *const kWarningTitle;
 extern NSString *const kOKTitle;
+extern NSString *const kCountryTitle;
+
+//Storyboard Identifiers
+
+extern NSString *const kUserDetailsViewController;
 
 //API Constant
 

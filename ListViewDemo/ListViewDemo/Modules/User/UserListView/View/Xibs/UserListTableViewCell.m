@@ -9,6 +9,7 @@
 
 @implementation UserListTableViewCell
 
+
 //MARK: - View Lifecycle Methods
 
 - (void)awakeFromNib {
@@ -22,11 +23,17 @@
     // Configure the view for the selected state
 }
 
-//MARK: - Defined Method
+//MARK: - Public Methods
 
 - (void)setIntialUI {
-    
+    [self.userNameLabel setText: kCountryTitle];
 }
+
++ (NSString *)cellIdentifier {
+    NSString *className = NSStringFromClass([UserListTableViewCell class]);
+    return className;
+}
+
 - (void)getModelData:(UserListCellViewModel *)model {
 
     [self.userProfilePicImageView sd_setImageWithURL:[NSURL URLWithString: model.mediumUserImage]
