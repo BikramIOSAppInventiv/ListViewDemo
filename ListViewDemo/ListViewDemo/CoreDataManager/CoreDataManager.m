@@ -64,7 +64,7 @@
 
 //Fetch Data In Local DB
 
-- (NSArray *)fetchObjectsForEntity:(NSString *)entityName {
+- (NSMutableArray *)fetchObjectsForEntity:(NSString *)entityName {
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
     

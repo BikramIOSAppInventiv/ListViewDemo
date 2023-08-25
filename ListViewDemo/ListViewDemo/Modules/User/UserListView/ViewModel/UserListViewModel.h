@@ -23,6 +23,9 @@ typedef void (^ModelArrayCompletionBlock)(NSMutableArray<UserListCellViewModel *
 
 @property (nonatomic, strong) NSMutableArray<UserListCellViewModel *> *personArray;
 - (NSInteger)totalUserRecords;
+@property (nonatomic, assign) NSInteger currentPage;
+@property (nonatomic, assign) NSInteger pageSize;
+@property (nonatomic, assign) BOOL isFeatchingData;
 
 //MARK: - Public Methods
 

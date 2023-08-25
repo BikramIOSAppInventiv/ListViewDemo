@@ -12,6 +12,7 @@
 #import "MBProgressHUD.h"
 #import "MBProgressHUD.h"
 #import "UIAlertController+Extensions.h"
+#import "ActivityIndicator.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: - IBOutlets
 
 @property (weak, nonatomic) IBOutlet UITableView *userListTableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) ActivityIndicator *footerView;
 
 //MARK: - Properties
 
@@ -33,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)configureTableView;
 - (void)configureViewModel;
 - (void)callGetUserDetailsDataAPI;
+- (void)loadNextPageAPIData;
 
 @end
 

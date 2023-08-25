@@ -15,26 +15,53 @@
     return  self.personArray.count;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _personArray = [NSMutableArray array];
+        _isFeatchingData = false;
+        _currentPage = 1;
+        _pageSize = 10; // Adjust this value based on your requirements
+    }
+    return self;
+}
+
 //MARK: - Public Methods
 
 - (UserListCellViewModel *)getUserRecords: (NSInteger)index {
-    return [self.personArray objectAtIndex: index];
+    if (index < self.personArray.count) {
+        return [self.personArray objectAtIndex: index];
+    }else {
+        NSLog(@"Index is out of bounds");
+        return nil;
+    }
 }
 
 - (void)fetchUserDataFromAPI:(ModelArrayCompletionBlock)completion  {
     
-    NSString *urlString = [NSString stringWithFormat:@"%@%@", kBaseURL, kAPIKey];
+//    NSString *urlString = [NSString stringWithFormat:@"%@%@", kBaseURL, kAPIKey];
+    
+//    NSString *urlString = @"https://randomuser.me/api/?page=1&results=10";
+    
+    NSString *urlString = [NSString stringWithFormat:@"%@?page=%ld&results=%ld", kBaseURL, (long)self.currentPage, (long)self.pageSize];
+    
+    NSLog(@"Current URL%@", urlString);
     
     NSURL *apiURL = [NSURL URLWithString:urlString];
-    
+    self.isFeatchingData = true;
     [APIManager fetchDataFromAPIWithURL:apiURL completion:^(NSDictionary *response, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error);
             completion(nil, error);
         } else {
+            self.isFeatchingData = false;
+            [self.personArray removeAllObjects ];
+            if (self.currentPage == 1) {
+//                [CoreDataManager.sharedInstance clearedLocalDB: kUserDetailsEntity];
+            }
             UserListViewModel *person = [[UserListViewModel alloc] init];
             [person saveAPIDataInLocalDB:response];
-            self.personArray = [person fetchDataFromLocalDB];
+            [self.personArray addObjectsFromArray:[person fetchDataFromLocalDB]];
             if (completion) {
                 completion(self.personArray, nil);
             }
@@ -44,7 +71,6 @@
 
 - (void) saveAPIDataInLocalDB: (NSDictionary *) response {
     
-    [CoreDataManager.sharedInstance clearedLocalDB: kUserDetailsEntity];
     for (NSDictionary *userDict in response[@"results"]) {
         // Save an object
         
@@ -65,20 +91,20 @@
         [CoreDataManager.sharedInstance saveContext];
     }
 }
-
+    
 - (NSMutableArray<UserListCellViewModel *> *) fetchDataFromLocalDB {
     // Fetch objects
-    self.personArray = [NSMutableArray array];
     
-    NSArray<UserDetails *> *fetchedItems = [CoreDataManager.sharedInstance fetchObjectsForEntity: kUserDetailsEntity];
+    NSMutableArray<UserListCellViewModel *> *myArray = [NSMutableArray<UserListCellViewModel *> array];
+    
+    NSMutableArray<UserDetails *> *fetchedItems = [CoreDataManager.sharedInstance fetchObjectsForEntity: kUserDetailsEntity];
     
     for (UserDetails *userData in fetchedItems) {
-        NSLog(@"Key: %@", userData.title);
         UserListCellViewModel *user = [[UserListCellViewModel alloc] init];
-        [self.personArray addObject: [user initWithUserDetailsModel:userData]];
+        [myArray addObject: [user initWithUserDetailsModel:userData]];
     }
     
-    return  self.personArray;
+    return  myArray;
 }
 
 @end
