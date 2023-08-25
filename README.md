@@ -6,7 +6,7 @@ Test Version: **1.0**
 
 Test Version Date: **25th Augest 2023** 
 
-API Server: "https://randomuser.me/api/"
+API Server: "https://randomuser.me/"
 
 ## New Features :- 
    
