@@ -39,10 +39,6 @@
 
 - (void)fetchUserDataFromAPI:(ModelArrayCompletionBlock)completion  {
     
-//    NSString *urlString = [NSString stringWithFormat:@"%@%@", kBaseURL, kAPIKey];
-    
-//    NSString *urlString = @"https://randomuser.me/api/?page=1&results=10";
-    
     NSString *urlString = [NSString stringWithFormat:@"%@?page=%ld&results=%ld", kBaseURL, (long)self.currentPage, (long)self.pageSize];
     
     NSLog(@"Current URL%@", urlString);
@@ -56,9 +52,6 @@
         } else {
             self.isFeatchingData = false;
             [self.personArray removeAllObjects ];
-            if (self.currentPage == 1) {
-//                [CoreDataManager.sharedInstance clearedLocalDB: kUserDetailsEntity];
-            }
             UserListViewModel *person = [[UserListViewModel alloc] init];
             [person saveAPIDataInLocalDB:response];
             [self.personArray addObjectsFromArray:[person fetchDataFromLocalDB]];
@@ -73,7 +66,6 @@
     
     for (NSDictionary *userDict in response[@"results"]) {
         // Save an object
-        
         UserDetails *userDetail = [NSEntityDescription insertNewObjectForEntityForName: kUserDetailsEntity inManagedObjectContext:CoreDataManager.sharedInstance.context];
         userDetail.title = userDict[@"name"][@"title"];
         userDetail.first = userDict[@"name"][@"first"];
@@ -88,8 +80,9 @@
         userDetail.largeProfilePic = userDict[@"picture"][@"large"];
         userDetail.age = [userDict[@"dob"][@"age"] integerValue];
         userDetail.userDOB = userDict[@"dob"][@"date"];
-        [CoreDataManager.sharedInstance saveContext];
     }
+    
+    [CoreDataManager.sharedInstance saveContext];
 }
     
 - (NSMutableArray<UserListCellViewModel *> *) fetchDataFromLocalDB {
@@ -97,7 +90,7 @@
     
     NSMutableArray<UserListCellViewModel *> *myArray = [NSMutableArray<UserListCellViewModel *> array];
     
-    NSMutableArray<UserDetails *> *fetchedItems = [CoreDataManager.sharedInstance fetchObjectsForEntity: kUserDetailsEntity];
+    NSArray<UserDetails *> *fetchedItems = [CoreDataManager.sharedInstance fetchObjectsForEntity: kUserDetailsEntity];
     
     for (UserDetails *userData in fetchedItems) {
         UserListCellViewModel *user = [[UserListCellViewModel alloc] init];

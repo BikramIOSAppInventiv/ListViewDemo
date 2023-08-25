@@ -64,7 +64,7 @@
 
 //Fetch Data In Local DB
 
-- (NSMutableArray *)fetchObjectsForEntity:(NSString *)entityName {
+- (NSArray *)fetchObjectsForEntity:(NSString *)entityName {
     
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
     
@@ -84,31 +84,5 @@
     return fetchedObjects;
 }
 
-//Cleared Data In Local DB
-
-- (void)clearedLocalDB:(NSString *)entityName {
-    
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:entityName];
-    NSError *fetchError = nil;
-    NSArray *personsToDelete = [self.context executeFetchRequest:fetchRequest error:&fetchError];
-    
-    if (fetchError) {
-        NSLog(@"Error fetching data: %@", fetchError);
-        [ShowToast showToast: fetchError.description];
-    } else {
-        for (NSManagedObject *person in personsToDelete) {
-            [self.context deleteObject:person];
-        }
-        
-        NSError *saveError = nil;
-        if (![self.context save:&saveError]) {
-            NSLog(@"Error saving context: %@", saveError);
-            [ShowToast showToast: saveError.description];
-        } else {
-            NSLog(@"Entity cleared successfully");
-        }
-    }
-    
-}
 
 @end

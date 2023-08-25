@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)saveContext;
 - (void)clearedLocalDB:(NSString *)entityName;
-- (NSMutableArray *)fetchObjectsForEntity:(NSString *)entityName;
+- (NSArray *)fetchObjectsForEntity:(NSString *)entityName;
 
 @end
 

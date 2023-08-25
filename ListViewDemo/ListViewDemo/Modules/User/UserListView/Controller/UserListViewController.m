@@ -30,23 +30,12 @@
     [self.userListTableView registerNib:nib forCellReuseIdentifier: UserListTableViewCell.cellIdentifier];
     self.userListTableView.delegate = self;
     self.userListTableView.dataSource = self;
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
-    [self.userListTableView addSubview:self.refreshControl];
-    
     self.footerView = [[ActivityIndicator alloc] initWithFrame:CGRectMake(0, 0, self.userListTableView.frame.size.width, 44)];
-    
     self.userListTableView.tableFooterView = nil; // Start with no footer view
 }
 
 - (void)configureViewModel {
     self.viewModel = [[UserListViewModel alloc] init];
-}
-
-- (void)refreshData {
-    // Refresh action: Fetch new data or update existing data
-    self.viewModel.currentPage = 1;
-    [self loadNextPageAPIData];
 }
 
 - (void)callGetUserDetailsDataAPI {
@@ -85,7 +74,6 @@
             } else {
                 // Use the fetched models
                 [self.userListTableView reloadData];
-                [self.refreshControl endRefreshing];
                 [self.footerView.activityIndicator stopAnimating];
                 self.userListTableView.tableFooterView = nil; // Hide footer view
             }

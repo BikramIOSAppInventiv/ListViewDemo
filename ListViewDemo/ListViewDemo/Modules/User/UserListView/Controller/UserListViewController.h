@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 //MARK: - IBOutlets
 
 @property (weak, nonatomic) IBOutlet UITableView *userListTableView;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) ActivityIndicator *footerView;
 
 //MARK: - Properties
